@@ -1,2 +1,1 @@
 #jojo
-print('devdev')
