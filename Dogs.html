@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>БОРЗЫЕ ПСЫ | Underground Culture</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neon-green': '#39ff14',
+                        'neon-pink': '#ff073a',
+                        'neon-blue': '#0080ff',
+                        'dark-bg': '#0a0a0a',
+                        'underground': '#1a1a1a'
+                    },
+                    fontFamily: {
+                        'cyber': ['Orbitron', 'sans-serif'],
+                        'street': ['Rajdhani', 'sans-serif']
+                    },
+                    animation: {
+                        'pulse-neon': 'pulse-neon 2s ease-in-out infinite alternate',
+                        'glitch': 'glitch 0.3s linear infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes pulse-neon {
+            from {
+                text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14;
+            }
+            to {
+                text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 15px #39ff14;
+            }
+        }
+
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            10% { transform: translate(-2px, 2px); }
+            20% { transform: translate(2px, -2px); }
+            30% { transform: translate(-2px, -2px); }
+            40% { transform: translate(2px, 2px); }
+            50% { transform: translate(-2px, 2px); }
+            60% { transform: translate(2px, -2px); }
+            70% { transform: translate(-2px, -2px); }
+            80% { transform: translate(2px, 2px); }
+            90% { transform: translate(-2px, 2px); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .graffiti-text {
+            background: linear-gradient(45deg, #39ff14, #0080ff, #ff073a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 300% 300%;
+            animation: gradient-shift 3s ease infinite;
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .neon-border {
+            box-shadow: 0 0 10px #39ff14, inset 0 0 10px rgba(57, 255, 20, 0.1);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 0 25px rgba(57, 255, 20, 0.5);
+        }
+
+        .dark .bg-white { background-color: #1a1a1a; }
+        .dark .text-gray-900 { color: #e5e5e5; }
+        .dark .text-gray-700 { color: #a0a0a0; }
+        .dark .bg-gray-100 { background-color: #2a2a2a; }
+    </style>
+</head>
+<body class="bg-dark-bg text-white font-street overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-sm border-b border-neon-green/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-cyber font-bold graffiti-text">БОРЗЫЕ</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="hover:text-neon-green transition-colors px-3 py-2 text-sm font-medium">ГЛАВНАЯ</a>
+                        <a href="#breeds" class="hover:text-neon-green transition-colors px-3 py-2 text-sm font-medium">ПОРОДЫ</a>
+                        <a href="#culture" class="hover:text-neon-green transition-colors px-3 py-2 text-sm font-medium">КУЛЬТУРА</a>
+                        <a href="#gallery" class="hover:text-neon-green transition-colors px-3 py-2 text-sm font-medium">ГАЛЕРЕЯ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-underground to-black overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-neon-green/10 rounded-full blur-3xl animate-float"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-neon-pink/10 rounded-full blur-3xl animate-float" style="animation-delay: -1s;"></div>
+        </div>
+        
+        <div class="relative text-center px-4 max-w-6xl">
+            <h1 class="text-6xl md:text-8xl font-cyber font-black mb-6 animate-pulse-neon">
+                БОРЗЫЕ ПСЫ
+            </h1>
+            <p class="text-xl md:text-2xl font-street mb-8 graffiti-text">
+                СКОРОСТЬ • ГРАЦИЯ • УЛИЧНАЯ КУЛЬТУРА
+            </p>
+            <div class="text-lg md:text-xl text-gray-300 mb-12 leading-relaxed">
+                <p class="mb-4">В мире уличной культуры борзые - это символ скорости и элегантности</p>
+                <p>Древние охотники, современные легенды</p>
+            </div>
+            <button onclick="document.getElementById('breeds').scrollIntoView({behavior: 'smooth'})" 
+                    class="bg-gradient-to-r from-neon-green to-neon-blue text-black font-bold py-4 px-8 rounded-lg neon-border hover:animate-glitch transition-all duration-300 text-lg">
+                ПОЗНАТЬ ПОРОДЫ
+            </button>
+        </div>
+    </section>
+
+    <!-- Breeds Section -->
+    <section id="breeds" class="py-20 bg-underground">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-cyber font-bold text-center mb-16 graffiti-text">
+                ЛЕГЕНДЫ СКОРОСТИ
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Greyhound -->
+                <div class="bg-black/50 rounded-lg p-6 neon-border card-hover">
+                    <div class="h-48 bg-gradient-to-br from-neon-green/20 to-neon-blue/20 rounded-lg mb-4 flex items-center justify-center">
+                        <span class="text-6xl">🐕</span>
+                    </div>
+                    <h3 class="text-2xl font-cyber font-bold mb-3 text-neon-green">ГРЕЙХАУНД</h3>
+                    <p class="text-gray-300 mb-4">Король скорости. 72 км/ч на пике формы. Аэродинамичное тело создано для рывков.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-neon-green/20 text-neon-green px-2 py-1 rounded text-sm">СКОРОСТЬ</span>
+                        <span class="bg-neon-blue/20 text-neon-blue px-2 py-1 rounded text-sm">ГРАЦИЯ</span>
+                    </div>
+                </div>
+
+                <!-- Afghan Hound -->
+                <div class="bg-black/50 rounded-lg p-6 neon-border card-hover">
+                    <div class="h-48 bg-gradient-to-br from-neon-pink/20 to-neon-green/20 rounded-lg mb-4 flex items-center justify-center">
+                        <span class="text-6xl">🦮</span>
+                    </div>
+                    <h3 class="text-2xl font-cyber font-bold mb-3 text-neon-pink">АФГАНСКАЯ БОРЗАЯ</h3>
+                    <p class="text-gray-300 mb-4">Горный аристократ с роскошной шерстью. Независимый характер истинного андеграунда.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-neon-pink/20 text-neon-pink px-2 py-1 rounded text-sm">СТИЛЬ</span>
+                        <span class="bg-neon-green/20 text-neon-green px-2 py-1 rounded text-sm">НЕЗАВИСИМОСТЬ</span>
+                    </div>
+                </div>
+
+                <!-- Saluki -->
+                <div class="bg-black/50 rounded-lg p-6 neon-border card-hover">
+                    <div class="h-48 bg-gradient-to-br from-neon-blue/20 to-neon-pink/20 rounded-lg mb-4 flex items-center justify-center">
+                        <span class="text-6xl">🐕‍🦺</span>
+                    </div>
+                    <h3 class="text-2xl font-cyber font-bold mb-3 text-neon-blue">САЛЮКИ</h3>
+                    <p class="text-gray-300 mb-4">Древний охотник пустыни. 7000 лет истории в каждом движении. Настоящий OG.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-neon-blue/20 text-neon-blue px-2 py-1 rounded text-sm">ИСТОРИЯ</span>
+                        <span class="bg-neon-pink/20 text-neon-pink px-2 py-1 rounded text-sm">ВЫНОСЛИВОСТЬ</span>
+                    </div>
+                </div>
+
+                <!-- Borzoi -->
+                <div class="bg-black/50 rounded-lg p-6 neon-border card-hover">
+                    <div class="h-48 bg-gradient-to-br from-neon-green/20 to-neon-pink/20 rounded-lg mb-4 flex items-center justify-center">
+                        <span class="text-6xl">🐕‍🦺</span>
+                    </div>
+                    <h3 class="text-2xl font-cyber font-bold mb-3 text-neon-green">РУССКАЯ ПСОВАЯ</h3>
+                    <p class="text-gray-300 mb-4">Царская порода со стритовой душой. Элегантность и мощь в одном флоу.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-neon-green/20 text-neon-green px-2 py-1 rounded text-sm">ЭЛЕГАНТНОСТЬ</span>
+                        <span class="bg-neon-blue/20 text-neon-blue px-2 py-1 rounded text-sm">МОЩЬ</span>
+                    </div>
+                </div>
+
+                <!-- Irish Wolfhound -->
+                <div class="bg-black/50 rounded-lg p-6 neon-border card-hover">
+                    <div class="h-48 bg-gradient-to-br from-neon-pink/20 to-neon-blue/20 rounded-lg mb-4 flex items-center justify-center">
+                        <span class="text-6xl">🐕</span>
+                    </div>
+                    <h3 class="text-2xl font-cyber font-bold mb-3 text-neon-pink">ИРЛАНДСКИЙ ВОЛКОДАВ</h3>
+                    <p class="text-gray-300 mb-4">Гигант с добрым сердцем. Нежный великан андеграунд-сцены.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-neon-pink/20 text-neon-pink px-2 py-1 rounded text-sm">РАЗМЕР</span>
+                        <span class="bg-neon-green/20 text-neon-green px-2 py-1 rounded text-sm">ДОБРОТА</span>
+                    </div>
+                </div>
+
+                <!-- Whippet -->
+                <div class="bg-black/50 rounded-lg p-6 neon-border card-hover">
+                    <div class="h-48 bg-gradient-to-br from-neon-blue/20 to-neon-green/20 rounded-lg mb-4 flex items-center justify-center">
+                        <span class="text-6xl">🐕</span>
+                    </div>
+                    <h3 class="text-2xl font-cyber font-bold mb-3 text-neon-blue">УИППЕТ</h3>
+                    <p class="text-gray-300 mb-4">Компактная ракета. Скорость в малом формате. Идеальный городской компаньон.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-neon-blue/20 text-neon-blue px-2 py-1 rounded text-sm">КОМПАКТНОСТЬ</span>
+                        <span class="bg-neon-green/20 text-neon-green px-2 py-1 rounded text-sm">ЛОВКОСТЬ</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section id="culture" class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-cyber font-bold text-center mb-16 graffiti-text">
+                УЛИЧНАЯ ФИЛОСОФИЯ
+            </h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="bg-underground/50 p-6 rounded-lg neon-border">
+                        <h3 class="text-2xl font-cyber font-bold mb-4 text-neon-green">СКОРОСТЬ КАК ИСКУССТВО</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            Борзые не просто бегают - они создают поэзию движения. Каждый их шаг - это рифма, 
+                            каждый рывок - новый трек. В андеграунд-культуре они символизируют стремление к свободе 
+                            и преодоление границ.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-underground/50 p-6 rounded-lg neon-border">
+                        <h3 class="text-2xl font-cyber font-bold mb-4 text-neon-blue">ИСТОРИЯ С УЛИЦ</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            От древних пустынь до современных мегаполисов, борзые всегда были рядом с людьми. 
+                            Они видели империи, революции, культурные движения. Настоящие свидетели истории.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-underground/50 p-6 rounded-lg neon-border">
+                        <h3 class="text-2xl font-cyber font-bold mb-4 text-neon-pink">СОВРЕМЕННЫЙ АНДЕГРАУНД</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            Сегодня борзые - это не просто домашние питомцы. Это философия жизни, стиль мышления. 
+                            Быть как борзая - значит двигаться быстро, думать независимо, сохранять грацию под давлением.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="bg-gradient-to-br from-neon-green/10 to-neon-pink/10 p-8 rounded-lg neon-border">
+                        <div class="text-center space-y-6">
+                            <div class="text-8xl mb-6">🎤</div>
+                            <h3 class="text-3xl font-cyber font-bold graffiti-text">RAP VERSE</h3>
+                            <div class="text-lg font-street leading-relaxed text-gray-300">
+                                <p class="mb-2">"Быстрые лапы по асфальту бьют ритм,</p>
+                                <p class="mb-2">Борзая в городе - это не миф,</p>
+                                <p class="mb-2">Скорость и грация в каждом движении,</p>
+                                <p>Андеграунд-легенда без сомнения!"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-underground">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-cyber font-bold text-center mb-16 graffiti-text">
+                ГАЛЕРЕЯ ЛЕГЕНД
+            </h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="aspect-square bg-gradient-to-br from-neon-green/20 to-black rounded-lg neon-border card-hover flex items-center justify-center">
+                    <span class="text-4xl">🏃‍♂️</span>
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-neon-pink/20 to-black rounded-lg neon-border card-hover flex items-center justify-center">
+                    <span class="text-4xl">⚡</span>
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-neon-blue/20 to-black rounded-lg neon-border card-hover flex items-center justify-center">
+                    <span class="text-4xl">🎯</span>
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-neon-green/20 to-neon-pink/20 rounded-lg neon-border card-hover flex items-center justify-center">
+                    <span class="text-4xl">🌟</span>
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-neon-pink/20 to-neon-blue/20 rounded-lg neon-border card-hover flex items-center justify-center">
+                    <span class="text-4xl">🔥</span>
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-neon-blue/20 to-neon-green/20 rounded-lg neon-border card-hover flex items-center justify-center">
+                    <span class="text-4xl">💎</span>
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-neon-green/20 to-black rounded-lg neon-border card-hover flex items-center justify-center">
+                    <span class="text-4xl">🚀</span>
+                </div>
+                <div class="aspect-square bg-gradient-to-br from-neon-pink/20 to-black rounded-lg neon-border card-hover flex items-center justify-center">
+                    <span class="text-4xl">👑</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-neon-green/30 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h3 class="text-3xl font-cyber font-bold mb-4 graffiti-text">БОРЗЫЕ ПСИНЫ</h3>
+                <p class="text-gray-400 mb-6 font-street">
+                    Скорость • Грация • Культура • Независимость
+                </p>
+                <div class="flex justify-center space-x-6 text-2xl">
+                    <span class="text-neon-green cursor-pointer hover:animate-glitch">🎵</span>
+                    <span class="text-neon-pink cursor-pointer hover:animate-glitch">🎤</span>
+                    <span class="text-neon-blue cursor-pointer hover:animate-glitch">🎧</span>
+                </div>
+                <p class="text-gray-500 text-sm mt-8">© 2024 Underground Sighthounds Culture</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add glitch effect on hover to cards
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.animation = 'glitch 0.3s linear 3';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.animation = '';
+            });
+        });
+
+        // Parallax effect for floating elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelectorAll('.animate-float');
+            
+            parallax.forEach(element => {
+                const speed = 0.2;
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
